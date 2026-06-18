@@ -1,0 +1,97 @@
+/* ============================================================
+   FILM STRIP
+   ============================================================ */
+
+   .filmstrip {
+    position: relative;
+    width: 100%;
+    padding-block: var(--space-6);
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Fade edges */
+  .filmstrip::before,
+  .filmstrip::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 120px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  .filmstrip::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-surface), transparent);
+  }
+  
+  .filmstrip::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-surface), transparent);
+  }
+  
+  /* Scrolling track */
+  .filmstrip__track {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    white-space: nowrap;
+    animation: filmScroll 30s linear infinite;
+    will-change: transform;
+  }
+  
+  .filmstrip:hover .filmstrip__track {
+    animation-play-state: paused;
+  }
+  
+  /* Each item */
+  .filmstrip__item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-6);
+    padding-inline: var(--space-8);
+  }
+  
+  .filmstrip__item-text {
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    transition: color var(--transition-fast);
+    white-space: nowrap;
+  }
+  
+  .filmstrip__item:hover .filmstrip__item-text {
+    color: var(--color-text-primary);
+  }
+  
+  .filmstrip__item-text.highlight {
+    color: var(--color-gold);
+  }
+  
+  /* Separator dot */
+  .filmstrip__dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--color-border);
+    flex-shrink: 0;
+  }
+  
+  .filmstrip__dot.purple {
+    background: var(--color-purple);
+  }
+  
+  /* Scroll animation */
+  @keyframes filmScroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }

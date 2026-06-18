@@ -1,0 +1,255 @@
+/* ============================================================
+   RESUME
+   ============================================================ */
+
+   .resume {
+    padding-block: var(--section-gap);
+    padding-inline: var(--container-pad);
+  }
+  
+  .resume__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-20);
+    align-items: start;
+  }
+  
+  .resume__heading {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-4);
+  }
+  
+  .resume__heading span {
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .resume__sub {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--space-10);
+    max-width: 340px;
+  }
+  
+  .resume__download {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-8);
+    background: var(--gradient-brand-h);
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius-full);
+    transition: opacity var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+    margin-bottom: var(--space-16);
+  }
+  
+  .resume__download:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-purple);
+  }
+  
+  /* ── Timeline ── */
+  .resume__timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  /* Vertical line */
+  .resume__timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--color-purple), var(--color-gold), transparent);
+  }
+  
+  .resume__item {
+    position: relative;
+    padding-left: var(--space-10);
+    padding-bottom: var(--space-10);
+  }
+  
+  .resume__item:last-child {
+    padding-bottom: 0;
+  }
+  
+  /* Dot on timeline */
+  .resume__item::before {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: 6px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--color-purple);
+    border: 2px solid var(--color-bg);
+    z-index: 1;
+    transition: background var(--transition-fast), transform var(--transition-fast);
+  }
+  
+  .resume__item:hover::before {
+    background: var(--color-gold);
+    transform: scale(1.3);
+  }
+  
+  .resume__item-period {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: var(--space-2);
+  }
+  
+  .resume__item-role {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    letter-spacing: -0.01em;
+    margin-bottom: var(--space-1);
+  }
+  
+  .resume__item-company {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--color-purple-light);
+    margin-bottom: var(--space-3);
+    font-weight: 500;
+  }
+  
+  .resume__item-desc {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+  
+  /* ── Right — Education + Extras ── */
+  .resume__right {}
+  
+  .resume__section-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: var(--space-6);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+  
+  .resume__section-label::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--color-gold);
+  }
+  
+  .resume__education {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    margin-bottom: var(--space-12);
+  }
+  
+  .resume__edu-item {
+    padding: var(--space-6);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition: border-color var(--transition-fast);
+  }
+  
+  .resume__edu-item:hover {
+    border-color: var(--color-purple);
+  }
+  
+  .resume__edu-period {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-2);
+  }
+  
+  .resume__edu-degree {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-1);
+  }
+  
+  .resume__edu-school {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+  
+  /* Extras — certifications etc */
+  .resume__extras {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  
+  .resume__extra-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-4) var(--space-5);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: border-color var(--transition-fast);
+  }
+  
+  .resume__extra-item:hover {
+    border-color: var(--color-purple);
+  }
+  
+  .resume__extra-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  
+  .resume__extra-name {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    font-weight: 500;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .resume__inner {
+      grid-template-columns: 1fr;
+      gap: var(--space-16);
+    }
+  
+    .resume__heading {
+      font-size: var(--text-3xl);
+    }
+  }
