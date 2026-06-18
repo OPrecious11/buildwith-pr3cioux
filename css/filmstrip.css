@@ -93,3 +93,16 @@
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }
   }
+
+  @media (max-width: 768px) {
+    .filmstrip__track {
+      display: inline-flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+    }
+  
+    .filmstrip__item {
+      display: inline-flex !important;
+      flex-shrink: 0 !important;
+    }
+  }

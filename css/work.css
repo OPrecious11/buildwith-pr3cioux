@@ -370,3 +370,20 @@
       height: 280px;
     }
   }
+
+  .work__featured-top {
+    z-index: 10;
+    pointer-events: auto;
+  }
+  
+  .work__card-top {
+    z-index: 10;
+    pointer-events: auto;
+  }
+  
+  .work__featured-link,
+  .work__card-link {
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+  }
