@@ -158,6 +158,8 @@
     transition: all var(--transition-base);
     background: rgba(8,6,8,0.5);
     backdrop-filter: blur(8px);
+    z-index: 10;
+    position: relative;
   }
   
   .work__featured:hover .work__featured-link {
@@ -312,6 +314,8 @@
     transition: all var(--transition-base);
     background: rgba(8,6,8,0.5);
     backdrop-filter: blur(8px);
+    z-index: 10;
+    position: relative;
   }
   
   .work__card:hover .work__card-link {
@@ -342,38 +346,20 @@
     .work__header {
       flex-direction: column;
       align-items: flex-start;
-
-      @media (max-width: 768px) {
-        .work__featured {
-          height: 400px;
-          overflow: hidden;
-        }
-      
-        .work__featured-title {
-          font-size: clamp(1.8rem, 8vw, 2.5rem);
-          letter-spacing: -0.02em;
-        }
-      
-        .work__card-title {
-          font-size: var(--text-xl);
-        }
-      
-        .work__grid {
-          grid-template-columns: 1fr;
-        }
-      
-        .work__card {
-          height: 280px;
-        }
-      }
     }
   
     .work__featured {
       height: 400px;
+      overflow: hidden;
     }
   
     .work__featured-title {
-      font-size: var(--text-3xl);
+      font-size: clamp(1.8rem, 8vw, 2.5rem);
+      letter-spacing: -0.02em;
+    }
+  
+    .work__card-title {
+      font-size: var(--text-xl);
     }
   
     .work__grid {

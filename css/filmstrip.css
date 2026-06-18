@@ -14,7 +14,6 @@
     align-items: center;
   }
   
-  /* Fade edges */
   .filmstrip::before,
   .filmstrip::after {
     content: '';
@@ -36,13 +35,14 @@
     background: linear-gradient(to left, var(--color-surface), transparent);
   }
   
-  /* Scrolling track */
   .filmstrip__track {
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     align-items: center;
     gap: 0;
     white-space: nowrap;
-    animation: filmScroll 30s linear infinite;
+    animation: filmScroll 25s linear infinite;
     will-change: transform;
   }
   
@@ -50,9 +50,9 @@
     animation-play-state: paused;
   }
   
-  /* Each item */
   .filmstrip__item {
     display: inline-flex;
+    flex-shrink: 0;
     align-items: center;
     gap: var(--space-6);
     padding-inline: var(--space-8);
@@ -77,7 +77,6 @@
     color: var(--color-gold);
   }
   
-  /* Separator dot */
   .filmstrip__dot {
     width: 4px;
     height: 4px;
@@ -90,25 +89,7 @@
     background: var(--color-purple);
   }
   
-  /* Scroll animation */
   @keyframes filmScroll {
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }
-  }
-
-  @media (max-width: 768px) {
-    .filmstrip {
-      overflow: hidden;
-    }
-  
-    .filmstrip__track {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      animation: filmScroll 20s linear infinite;
-    }
-  
-    .filmstrip__item {
-      flex-shrink: 0;
-    }
   }
