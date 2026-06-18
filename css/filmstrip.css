@@ -95,3 +95,20 @@
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }
   }
+
+  @media (max-width: 768px) {
+    .filmstrip {
+      overflow: hidden;
+    }
+  
+    .filmstrip__track {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      animation: filmScroll 20s linear infinite;
+    }
+  
+    .filmstrip__item {
+      flex-shrink: 0;
+    }
+  }

@@ -173,6 +173,12 @@
     .hero {
       padding-block: var(--space-24) var(--space-20);
       min-height: 100svh;
+      overflow: hidden;
+    }
+  
+    .hero__headline {
+      font-size: clamp(2.8rem, 13vw, 4rem);
+      letter-spacing: -0.03em;
     }
   
     .hero__stats {
@@ -188,3 +194,17 @@
     .hero__stat { text-align: left; }
     .hero__scroll { display: none; }
   }
+  
+    .hero__stats {
+      position: relative;
+      bottom: auto;
+      right: auto;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: var(--space-8);
+      margin-top: var(--space-12);
+    }
+  
+    .hero__stat { text-align: left; }
+    .hero__scroll { display: none; }
+  
