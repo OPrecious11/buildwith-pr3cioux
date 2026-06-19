@@ -355,7 +355,12 @@
         :root {
           --sidebar-width: 0px;
           --container-pad: 1.25rem;
-          --section-gap: 4rem;
+          --section-gap: 3rem;
+          --space-32: 4rem;
+          --space-24: 3rem;
+          --space-20: 2.5rem;
+          --space-16: 2rem;
+          --space-12: 1.5rem;
         }
       
         .layout-shell {
@@ -365,6 +370,7 @@
         .layout-content {
           grid-column: 1;
           margin-left: 0;
+          overflow-x: hidden;
         }
       }
 
